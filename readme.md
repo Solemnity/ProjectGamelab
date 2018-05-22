@@ -2,7 +2,7 @@
 Team #
 1. Gijs Schouten
 2. Timo Heijne
-3. Han Reeeeeeemer
+
 
 [Projectmanagment]() <Trello scrumboard bijvoorbeeld>
 
@@ -16,3 +16,14 @@ Zet hier de links neer naar jullie documentatie.
 * [Ontwerp]()
 * [Testrapportage]()
 * [Presentatie]()
+
+
+
+
+
+
+
+
+
+
+3. Han Reeeeeeemer
