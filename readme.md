@@ -1,8 +1,8 @@
 # Speciale Input - Output
 Team #
-1. Silvan
-2. Ed
-3. Jelle
+1. Gijs Schouten
+2. Timo Heijne
+3. Han Reeeeeeemer
 
 [Projectmanagment]() <Trello scrumboard bijvoorbeeld>
 
