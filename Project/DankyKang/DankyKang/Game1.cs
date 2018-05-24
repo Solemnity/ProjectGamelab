@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using DankyKang.Source;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -63,7 +64,6 @@ namespace DankyKang
                 Exit();
 
             // TODO: Add your update logic here
-
             base.Update(gameTime);
         }
 
