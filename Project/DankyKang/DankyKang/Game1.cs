@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using DankyKang.Models;
+using DankyKang.Sprites;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -11,6 +14,11 @@ namespace DankyKang
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        private SpriteFont fontlol;
+        private int poop = 0;
+
+        private List<Sprite> _sprites;
         
         public Game1()
         {
@@ -41,6 +49,37 @@ namespace DankyKang
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            fontlol = Content.Load<SpriteFont>("font");
+
+            var animations = new Dictionary<string, Animations>() {
+                { "walkUp", new Animations(Content.Load<Texture2D>("Player/walkUp"), 8)},
+                { "walkDown", new Animations(Content.Load<Texture2D>("Player/walkDown"), 8)},
+                { "walkLeft", new Animations(Content.Load<Texture2D>("Player/walkLeft"), 8)},
+                { "walkRight", new Animations(Content.Load<Texture2D>("Player/walkRight"), 8)}
+                
+            };
+            
+            _sprites = new List<Sprite>() {
+                new Sprite(animations) {
+                    Position = new Vector2(100,100),
+                    Input = new Input() {
+                        Up = Keys.W,
+                        Down = Keys.S,
+                        Left = Keys.A,
+                        Right = Keys.D
+                    }
+                },
+                
+                new Sprite(animations) {
+                    Position = new Vector2(150,100),
+                    Input = new Input() {
+                        Up = Keys.Up,
+                        Down = Keys.Down,
+                        Left = Keys.Left,
+                        Right = Keys.Right
+                    }
+                }
+            };
         }
 
         /// <summary>
@@ -63,7 +102,10 @@ namespace DankyKang
                 Exit();
 
             // TODO: Add your update logic here
-
+            foreach (var sprite in _sprites) {
+                sprite.Update(gameTime, _sprites);
+            }
+            
             base.Update(gameTime);
         }
 
@@ -78,6 +120,12 @@ namespace DankyKang
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
+
+            spriteBatch.Begin();
+            foreach (var sprite in _sprites) {
+                sprite.Draw(spriteBatch);
+            }
+            spriteBatch.End();
         }
     }
 }
