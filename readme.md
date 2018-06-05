@@ -16,14 +16,3 @@ Zet hier de links neer naar jullie documentatie.
 * [Ontwerp]()
 * [Testrapportage]()
 * [Presentatie]()
-
-
-
-
-
-
-
-
-
-
-3. Han Reeeeeeemer
