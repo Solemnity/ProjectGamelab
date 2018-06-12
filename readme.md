@@ -7,7 +7,7 @@ Team #
 [Projectmanagment]() <Trello scrumboard bijvoorbeeld>
 
 ## Ontwerp
-Beschrijf hier kort jullie project
+Wij gaan met behulp van verschillende hardware en met gebruik van Monogame een retro arcadekast maken met verschillende input en output
 
 ## Portfolio
 Zet hier de links neer naar jullie documentatie.
