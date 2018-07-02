@@ -20,7 +20,7 @@
 /processorParam:TextureFormat=Compressed
 /build:font.spritefont
 
-#begin Player/walkRight.jpg
+#begin Player/spritesheet.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -30,9 +30,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Player/walkRight.jpg
+/build:Player/spritesheet.png
 
-#begin Player/walkDown.jpg
+#begin Player/climb.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -42,9 +42,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Player/walkDown.jpg
+/build:Player/climb.png
 
-#begin Player/walkLeft.jpg
+#begin Player/walkLeft.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -54,9 +54,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Player/walkLeft.jpg
+/build:Player/walkLeft.png
 
-#begin Player/walkUp.jpg
+#begin Player/walkRight.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -66,5 +66,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Player/walkUp.jpg
+/build:Player/walkRight.png
 

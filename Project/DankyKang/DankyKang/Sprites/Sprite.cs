@@ -84,7 +84,7 @@ namespace DankyKang.Sprites {
         protected virtual void SetAnimations() {
             if (Velocity.X > 0) {
                 _animationManager.Play(_animationses["walkRight"]);
-            }
+            } 
             else if (Velocity.X < 0) {
                 _animationManager.Play(_animationses["walkLeft"]);
             }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DankyKang.Camera;
 using DankyKang.Models;
 using DankyKang.Sprites;
 using Microsoft.Xna.Framework;
@@ -19,11 +20,16 @@ namespace DankyKang
         private int poop = 0;
 
         private List<Sprite> _sprites;
+        private Camera2D _camera2D;
+        private Game _game;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            _camera2D = new Camera2D(_game);
+            
+            
         }
 
         /// <summary>
@@ -40,7 +46,7 @@ namespace DankyKang
         }
 
         /// <summary>
-        /// LoadContent will be called once per game and is the place to load
+        /// LoadContent will be called once per game and is the place to loadwas
         /// all of your content.
         /// </summary>
         protected override void LoadContent()
@@ -52,17 +58,17 @@ namespace DankyKang
             fontlol = Content.Load<SpriteFont>("font");
 
             var animations = new Dictionary<string, Animations>() {
-                { "walkUp", new Animations(Content.Load<Texture2D>("Player/walkUp"), 8)},
-                { "walkDown", new Animations(Content.Load<Texture2D>("Player/walkDown"), 8)},
-                { "walkLeft", new Animations(Content.Load<Texture2D>("Player/walkLeft"), 8)},
-                { "walkRight", new Animations(Content.Load<Texture2D>("Player/walkRight"), 8)}
+                { "walkUp", new Animations(Content.Load<Texture2D>("Player/climb"), 4)},
+                { "walkDown", new Animations(Content.Load<Texture2D>("Player/spritesheet"), 4)},
+                { "walkLeft", new Animations(Content.Load<Texture2D>("Player/walkLeft"), 3)},
+                { "walkRight", new Animations(Content.Load<Texture2D>("Player/walkRight"), 3)}
                 
             };
             
             _sprites = new List<Sprite>() {
                 new Sprite(animations) {
                     Position = new Vector2(100,100),
-                    Input = new Input() {
+                    Input = new Input() {   
                         Up = Keys.W,
                         Down = Keys.S,
                         Left = Keys.A,
@@ -105,6 +111,8 @@ namespace DankyKang
             foreach (var sprite in _sprites) {
                 sprite.Update(gameTime, _sprites);
             }
+            
+            
             
             base.Update(gameTime);
         }
