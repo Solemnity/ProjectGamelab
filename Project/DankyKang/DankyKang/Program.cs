@@ -12,7 +12,7 @@ namespace DankyKang {
         [STAThread]
         static void Main() {
             Debugger.Debug("=== Initializing Game ===");
-            using (var game = new Game1())
+            using (var game = new Main())
                 game.Run();
         }
     }

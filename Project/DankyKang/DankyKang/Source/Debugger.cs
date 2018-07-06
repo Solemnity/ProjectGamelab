@@ -38,7 +38,7 @@ namespace DankyKang.Source {
             StackFrame frame = new StackFrame(2, true);
             var method = frame.GetMethod();
             var lineNumber = frame.GetFileLineNumber();
-
+            
             Console.WriteLine($"({method.Name}):{lineNumber} > {message}");
         }
     }

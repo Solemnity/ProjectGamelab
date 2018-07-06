@@ -1,4 +1,7 @@
-﻿using DankyKang.Source;
+﻿using System;
+using System.Text;
+using DankyKang.Source;
+using DankyKang.Source.Game_States;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -7,13 +10,32 @@ namespace DankyKang {
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+    public class Main : Game {
+        private GraphicsDeviceManager _graphics;
+        private SpriteBatch _spriteBatch;
+        private GameState _currentGameState;
 
-        public Game1() {
-            graphics = new GraphicsDeviceManager(this);
+        public GameState CurrentGameState {
+            get => _currentGameState;
+            set {
+                _currentGameState?.Destroy();
+                _currentGameState = value;
+                _currentGameState?.Initialize();
+            }
+        }
+
+        public static Main Instance;
+
+        public Main() {
+            Instance = this; 
+
+            _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            _graphics.PreferredBackBufferWidth = 1920;
+            _graphics.PreferredBackBufferHeight = 1080;
+            _graphics.IsFullScreen = true;
+            _graphics.ApplyChanges();
         }
 
         /// <summary>
@@ -24,7 +46,6 @@ namespace DankyKang {
         /// </summary>
         protected override void Initialize() {
             // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -34,9 +55,11 @@ namespace DankyKang {
         /// </summary>
         protected override void LoadContent() {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
+            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            Debugger.CustomColor("LoadContent has been called", ConsoleColor.DarkGreen);
+            
+            // We initialize the main menu here because we need to wait for the game to initialize its content manager
+            CurrentGameState = new MainMenu();
         }
 
         /// <summary>
@@ -56,7 +79,7 @@ namespace DankyKang {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            _currentGameState?.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -65,10 +88,12 @@ namespace DankyKang {
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime) {
-            GraphicsDevice.Clear(Color.BurlyWood);
-
-            // TODO: Add your drawing code here
-
+            GraphicsDevice.Clear(Color.Black);
+            
+            _spriteBatch.Begin();
+            _currentGameState?.Draw(_spriteBatch, gameTime);
+            _spriteBatch.End();
+            
             base.Draw(gameTime);
         }
     }
