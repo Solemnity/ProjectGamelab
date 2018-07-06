@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace DankyKang.Source.Objects {
     class spaceship : GameObject {
 
-        private Vector2 _position = new Vector2(0,0);
+        public Vector2 _position = new Vector2(0,0);
 
         private Texture2D _spaceshipTexture;
 
