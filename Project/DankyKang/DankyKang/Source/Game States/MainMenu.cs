@@ -14,7 +14,7 @@ namespace DankyKang.Source.Game_States {
         
         public override void Initialize() {
             base.Initialize();
-            _font = Main.Instance.Content.Load<SpriteFont>("MainFont");
+            _font = Main.Instance.Content.Load<SpriteFont>("font");
             
             Debugger.Debug("MainMenu :: Initialized");
         }

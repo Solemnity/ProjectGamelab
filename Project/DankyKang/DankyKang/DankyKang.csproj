@@ -13,7 +13,8 @@
     <AssemblyName>DankyKang</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>DesktopGL</MonoGamePlatform>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -70,6 +71,7 @@
     <Compile Include="Source\Game States\GameState.cs" />
     <Compile Include="Source\Game States\MainGame.cs" />
     <Compile Include="Source\Game States\MainMenu.cs" />
+    <Compile Include="Source\Objects\Bullet.cs" />
     <Compile Include="Source\Objects\GameObject.cs" />
     <Compile Include="Source\Objects\spaceship.cs" />
   </ItemGroup>
@@ -131,6 +133,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include=".gitignore" />
+    <None Include="app.config" />
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup />
