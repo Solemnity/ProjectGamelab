@@ -42,6 +42,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Asteroids\Asteroid.cs" />
+    <Compile Include="Asteroids\AsteroidSpawner.cs" />
     <Compile Include="Camera\Camera2D.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Managers\AnimationManager.cs" />
