@@ -17,6 +17,10 @@
       <e p="DankyKang" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
         <e p="app.manifest" t="Include" />
+        <e p="Asteroids" t="Include">
+          <e p="Asteroid.cs" t="Include" />
+          <e p="AsteroidSpawner.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Camera" t="Include">
           <e p="Camera2D.cs" t="Include" />
