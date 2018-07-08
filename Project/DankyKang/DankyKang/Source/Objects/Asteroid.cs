@@ -16,12 +16,14 @@ namespace DankyKang.Source.Game_States {
         private Texture2D _asteroidTexture;
 
         public Rectangle _boundingBox { get; private set; }
+        private int _health;
 
+        public Action<Asteroid> destroy;
 
         public Asteroid(Vector2 startPos, double angle) {
             _position = startPos;
             _angle = angle;
-
+            _health = Globals.ASTEROID_HEALTH;
         }
 
         public override void Start() {
@@ -33,7 +35,7 @@ namespace DankyKang.Source.Game_States {
 
         public override void Update(GameTime gameTime) {
             if (_timeToDestroy <= 0) {
-                // Initialize Destruction of this asteroid here
+                destroy?.Invoke(this);
             } else {
                 _timeToDestroy -= gameTime.ElapsedGameTime.Milliseconds;
             }
@@ -60,6 +62,13 @@ namespace DankyKang.Source.Game_States {
 
             spriteBatch.Draw(_asteroidTexture, _drawPos, sourceRectangle, Color.White, 0, origin, new Vector2(.5f, .5f), SpriteEffects.None, 0f);
 
+        }
+
+        public void Hit()
+        {
+            _health -= 1;
+            if(_health <= 0) 
+                destroy?.Invoke(this);
         }
     }
 }

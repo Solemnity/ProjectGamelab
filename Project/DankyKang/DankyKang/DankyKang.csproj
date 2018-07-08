@@ -72,6 +72,7 @@
     <Compile Include="Source\Game States\MainGame.cs" />
     <Compile Include="Source\Game States\MainMenu.cs" />
     <Compile Include="Source\Objects\AsteroidSpawner.cs" />
+    <Compile Include="Source\Objects\Bullet.cs" />
     <Compile Include="Source\Objects\GameObject.cs" />
     <Compile Include="Source\Objects\Spaceship.cs" />
     <Compile Include="Source\Globals.cs" />

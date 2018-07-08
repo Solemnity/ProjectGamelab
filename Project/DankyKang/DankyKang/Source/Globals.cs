@@ -16,8 +16,12 @@ namespace DankyKang.Source {
         public const float ASTEROID_BASE_SPAWN_INTERVAL = 2000f; // Miliseconds
         public const int ASTEROID_MAX_ANGLE_SWAY = 10;
         public const float PLAYER_HIT_COOLDOWN = 2000f; // Miliseconds
+        public const int ASTEROID_HEALTH = 3;
+        public const int PLAYER_HEALTH = 5;
 
-        public const float ASTEROID_LIFE_TIME = 10f; // Life time in seconds
+        public const float ASTEROID_LIFE_TIME = 10000f; // Life time in miliseconds
+        public const float BULLET_LIFE_TIME = 10000f; // Life time in miliseconds
+        public const float BULLET_SPEED = 11f;
 
         public const int RENDER_TARGET_HEIGHT = 1080;
         public const int RENDER_TARGET_WIDTH = 1920;
