@@ -29,6 +29,8 @@ namespace DankyKang.Source.Game_States {
             _spaceship = new Spaceship(new Vector2(Globals.RENDER_TARGET_WIDTH / 2, Globals.RENDER_TARGET_HEIGHT / 2));
             _spaceship.Start();
 
+            _spaceship.died += () => Main.Instance.CurrentGameState = new GameOverState(_score);
+
             _asteroidSpawner.spawnedAsteroid += SpawnedAsteroid;
 
 
@@ -80,7 +82,7 @@ namespace DankyKang.Source.Game_States {
             if (Keyboard.GetState().IsKeyDown(Keys.Space) && !_shootPressed) {
                 _shootPressed = true;
                 Bullet bul = new Bullet(_spaceship._position, _spaceship.Angle);
-                bul.destroy += bullet => _deletBulletList.Add(bullet); 
+                bul.destroy += bullet => _deletBulletList.Add(bullet);
                 bul.Start();
                 _bullets.Add(bul);
 

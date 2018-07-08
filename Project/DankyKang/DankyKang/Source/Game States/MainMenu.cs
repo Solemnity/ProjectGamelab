@@ -25,8 +25,11 @@ namespace DankyKang.Source.Game_States {
 
             if (Keyboard.GetState().IsKeyDown(Keys.Enter)) 
                 Main.Instance.CurrentGameState = new MainGame(); // Eventually this should go to level select or game scene
-            
-            if(Keyboard.GetState().IsKeyDown(Keys.LeftAlt) && Keyboard.GetState().IsKeyDown(Keys.Enter)) 
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Tab))
+                Main.Instance.CurrentGameState = new GameOverState(0); // Eventually this should go to level select or game scene
+
+            if (Keyboard.GetState().IsKeyDown(Keys.LeftAlt) && Keyboard.GetState().IsKeyDown(Keys.Enter)) 
                 Main.Instance.CurrentGameState = new MainMenu(); // Eventually this should switch to level creation screen
 
             // Check the device for Player One
@@ -48,7 +51,7 @@ namespace DankyKang.Source.Game_States {
             base.Draw(spriteBatch, gameTime);
             
             spriteBatch.DrawString(_font, MainText,
-                new Vector2(x: Main.Instance.GraphicsDevice.Viewport.Bounds.Width/2 - _font.MeasureString(MainText).X/2, y: Main.Instance.GraphicsDevice.Viewport.Height/2 - _font.MeasureString(MainText).Y/2 ), Color.White);
+                new Vector2(x: Globals.RENDER_TARGET_WIDTH / 2 - _font.MeasureString(MainText).X/2, y: Globals.RENDER_TARGET_HEIGHT / 2 - _font.MeasureString(MainText).Y/2 ), Color.White);
         }
     }
 }

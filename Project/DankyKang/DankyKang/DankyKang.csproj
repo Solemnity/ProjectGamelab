@@ -67,6 +67,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Debugger.cs" />
+    <Compile Include="Source\Game States\GameOverState.cs" />
     <Compile Include="Source\Objects\Asteroid.cs" />
     <Compile Include="Source\Game States\GameState.cs" />
     <Compile Include="Source\Game States\MainGame.cs" />

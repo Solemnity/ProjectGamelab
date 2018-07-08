@@ -18,6 +18,8 @@ namespace DankyKang.Source.Objects {
         private int _health;
         private float _healthCooldown = 0;
 
+        public Action died;
+
         public Spaceship(Vector2 startPos) {
             _position = startPos;
             _health = Globals.PLAYER_HEALTH;
@@ -79,6 +81,7 @@ namespace DankyKang.Source.Objects {
 
                 if (_health <= 0) {
                     // We ded
+                    died?.Invoke();
                     Debugger.CustomColor("Spaceship :: Ded", ConsoleColor.DarkMagenta);
                 }
             }
