@@ -14,7 +14,7 @@ namespace DankyKang.Source.Game_States {
         
         public override void Initialize() {
             base.Initialize();
-            _font = Main.Instance.Content.Load<SpriteFont>("MainFont");
+            _font = Main.Instance.Content.Load<SpriteFont>("font");
             
             Debugger.Debug("MainMenu :: Initialized");
         }
@@ -22,7 +22,8 @@ namespace DankyKang.Source.Game_States {
         public override void Update(GameTime gameTime) {
             base.Update(gameTime);
             
-            if(Keyboard.GetState().IsKeyDown(Keys.Enter)) 
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Enter)) 
                 Main.Instance.CurrentGameState = new MainGame(); // Eventually this should go to level select or game scene
             
             if(Keyboard.GetState().IsKeyDown(Keys.LeftAlt) && Keyboard.GetState().IsKeyDown(Keys.Enter)) 
