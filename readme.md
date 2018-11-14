@@ -2,7 +2,6 @@
 Team epiiiiic
 1. Gijs Schouten
 2. Timo Heijne
-3. Wessel Vink
 
 
 [Projectmanagment](https://trello.com/b/dYOaqtbE/input-output) <Trello scrumboard bijvoorbeeld>
